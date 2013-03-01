@@ -4,30 +4,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <Button 
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button"
-        android:padding="20dp" 
-        android:onClick="onClick"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textView" 
-        android:layout_below="@+id/button"
-        android:padding="20dp"/>
-    
-    <EditText 
-        android:id="@+id/editText"
+    <ImageView
+        android:id="@+id/header_bar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/editText" 
-        android:layout_below="@+id/textView"
-        android:hint="ISBN"
-        android:padding="20dp"/>
-        />
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/header_bar"
+        android:src="@drawable/header_bar" />
+
+    <TabHost
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1" >
+            </FrameLayout>
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="0"
+                android:background="@color/tabDark" />
+        </RelativeLayout>
+    </TabHost>
+
+    <ImageButton
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/scan_isbn" />
 
 </RelativeLayout>
